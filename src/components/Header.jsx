@@ -3,6 +3,7 @@ import iconDown from "../assets/dropdown.svg";
 import iconUp from "../assets/dropup.svg";
 import { useState } from "react";
 import ellipsis from "../assets/vertical_ellipsis.svg"; 
+import HeaderDropdown from "./HeaderDropdown";
 
 function Header() {
   const [openDropdown, setOpenDropdown] = useState(false);
@@ -38,6 +39,8 @@ function Header() {
         <button className="button py-1 px-3 md:hidden">+</button>
         <img src={ellipsis} alt="ellipsis" className="cursor-pointer h-6"/>
       </header>
+      
+      {openDropdown && <HeaderDropdown/>}
     </div>
   );
 }
